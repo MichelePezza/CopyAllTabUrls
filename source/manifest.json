@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "version": "2.1.0",
+  "author": "Michele Pezza",
+  "default_locale": "en_US",
+  "icons": {
+    "128": "img/icon.svg",
+    "48": "img/icon.svg",
+    "16": "img/icon.svg"
+  },
+  "applications": {
+    "gecko": {
+      "id": "{0507f777-2480-4d48-baf1-3b9c8feeb2b4}",
+      "strict_min_version": "61.0"
+    }
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": {
+      "38": "img/icon.svg",
+      "19": "img/icon.svg"
+    },
+    "default_title": "__MSG_appButtonDesc__"
+  },
+  "permissions": [
+    "tabs",
+    "clipboardWrite",
+    "storage",
+    "notifications",
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": [
+      "js/action.js"
+    ]
+  },
+  "options_ui": {
+    "page": "options/options.html"
+  }
+}
