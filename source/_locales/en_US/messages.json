@@ -21,5 +21,7 @@
 "order":{"message":"Tabs Order"},
 "currenttab":{"message":"Current Tab"},
 "reverse":{"message":"Reverse"},
-"normal": {"message":"Normal"}
+"normal": {"message":"Normal"},
+"notification": {"message":"Notification"},
+"notificationenabled": {"message":"Notification enabled"}
 }

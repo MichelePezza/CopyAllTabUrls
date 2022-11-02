@@ -16,6 +16,9 @@ window.onload = () => {
     document.getElementById('CBorder').onchange = () => {
         saveSettings();
     };
+    document.getElementById('CBnotification').onchange = () => {
+        saveSettings();
+    };
     // Localization
     localization();
 }
@@ -27,7 +30,8 @@ var updateUI = () => {
         OPTwhere2copy: 'current',
         OPTwhat2copy: 'all',
         OPTformat: 'url',
-        CBorder: false
+        CBorder: false,
+        CBnotification: true
     },
         (data) => {
         // Update  GUI
@@ -35,6 +39,7 @@ var updateUI = () => {
         document.getElementById('OPTwhat2copy').value = data.OPTwhat2copy;
         document.getElementById('OPTformat').value = data.OPTformat;
         document.getElementById('CBorder').checked  = data.CBorder;
+        document.getElementById('CBnotification').checked  = data.CBnotification;
     })
 };
 
@@ -45,7 +50,8 @@ var saveSettings = () => {
         OPTwhere2copy: document.getElementById('OPTwhere2copy').value,
         OPTwhat2copy: document.getElementById('OPTwhat2copy').value,
 		OPTformat: document.getElementById('OPTformat').value,
- 		CBorder: document.getElementById('CBorder').checked
+ 		CBorder: document.getElementById('CBorder').checked,
+        CBnotification: document.getElementById('CBnotification').checked,
     }, () =>{
         //console.log('saved');
     });

@@ -4,6 +4,7 @@ var OPTwhere2copy;
 var OPTwhat2copy;
 var OPTformat;
 var CBorder;
+var CBnotification;
 
 browser.browserAction.onClicked.addListener(() => {
     browser.storage.local.get({
@@ -11,18 +12,21 @@ browser.browserAction.onClicked.addListener(() => {
         OPTwhere2copy: 'current',
         OPTwhat2copy: 'all',
         OPTformat: 'url',
-        CBorder: false
+        CBorder: false,
+        CBnotification: true
     },
         function (data) {
         OPTwhere2copy = data.OPTwhere2copy;
         OPTwhat2copy = data.OPTwhat2copy;
         OPTformat = data.OPTformat;
         CBorder = data.CBorder;
+        CBnotification = data.CBnotification;
         getAllUrl();
     });
 });
 
 var copiedNotification = (tit, msg) => {
+    if (CBnotification == true) {
     browser.notifications.create('onCopiedNotification', {
         "type": "list",
         "iconUrl": browser.runtime.getURL("img/icon.svg"),
@@ -32,6 +36,7 @@ var copiedNotification = (tit, msg) => {
     setTimeout(function () {
         browser.notifications.clear('onCopiedNotification');
     }, 3000);
+    }
 }
 
 var localization = () => {
